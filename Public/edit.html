@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage your reservation</title>
+</head>
+<body>
+
+<div class="container"  ng-controller="editCtrl">
+    <h2>Manage your reservation</h2>
+    <p>Please enter your confirmation code:
+        <input ng-model= 'confirm.editCCode' class="form-control">
+    <button ng-click="editBooking()">Submit</button>
+    </p>
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="eFirstName">First Name:</label>
+            <div class="col-sm-10">
+                <input ng-model='reservation.firstName' type="text" class="form-control" id="eFirstName" placeholder="Enter first name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="eContactInfo">Contact Info:</label>
+            <div class="col-sm-10">
+                <input ng-model='reservation.contactInfo' type="text" class="form-control" id="eContactInfo" placeholder="Enter your contact info" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="eDate">Date:</label>
+            <div class="col-sm-10">
+                <input ng-model='reservation.date' type="date" class="form-control" id="eDate" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="eTime">Time:</label>
+            <div class="col-sm-10">
+                <input ng-model='reservation.time' type="time" class="form-control" id="eTime" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="ePartySize">Party Size:</label>
+            <div class="col-sm-10">
+                <input ng-model='reservation.partySize' type="number" class="form-control" id="ePartySize" min="1" max="15"
+                       placeholder="Enter 1-15" required>
+            </div>
+        </div>
+                <button type="submit" class="btn btn-lg btn-success" ng-click="changeBooking()">Save changes</button>
+                <button type="submit" class="btn btn-lg btn-danger" ng-click="deleteBooking()">Delete this reservation</button>
+    </form>
+</div>
+
+
+<script src="js.js"></script>
+
+</body>
+</html>
